@@ -1,0 +1,8 @@
+---
+- hosts: windows
+  name: windows patch sample
+  tasks:
+    - name: Install Windows Updates
+      win_updates:
+        category_names: "{{ catagories | default(omit)}}"
+        reboot: "{{ reboot_server | default(yes)}}"
